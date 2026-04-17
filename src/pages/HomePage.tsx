@@ -75,13 +75,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                 </button>
               </div>
             </div>
-            <div className="hidden lg:block">
-              <img
-                src="https://cdn.poehali.dev/projects/f3409363-2927-4b58-a630-76d43e50d7ef/files/87b98474-ae94-4975-b36e-652d87108ac8.jpg"
-                alt="Страховая компания"
-                className="rounded-lg shadow-2xl w-full object-cover h-72 opacity-90"
-              />
-            </div>
+
           </div>
         </div>
       </section>
