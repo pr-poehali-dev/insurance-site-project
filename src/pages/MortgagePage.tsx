@@ -80,9 +80,9 @@ export default function MortgagePage() {
               </div>
               <div className="p-4">
                 <iframe
-                  src="https://b2c.pampadu.ru/index.html#549d4d35-44f8-4a37-bbd3-a3f354d3d8fc"
-                  style={{ width: '100%', border: 'none', height: '650px', minWidth: '320px', overflow: 'hidden' }}
-                  id="ppdwi-mortgage"
+                  src="https://ppdu.ru/9f12e860-20ad-445a-bf38-214798d47903"
+                  style={{ width: '100%', border: 'none', minWidth: '320px', overflow: 'hidden' }}
+                  id="ppdwiOffer"
                   scrolling="no"
                 />
               </div>
@@ -134,7 +134,7 @@ export default function MortgagePage() {
         </div>
       </div>
 
-      <script src="https://b2c.pampadu.ru/ppdw.js" async />
+      <script src="https://ppdu.ru/ppdw.js" async />
     </div>
   );
 }
