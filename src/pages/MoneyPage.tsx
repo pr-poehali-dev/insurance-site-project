@@ -50,12 +50,12 @@ export default function MoneyPage() {
         </div>
 
         {/* Widget — full width */}
-        <div className="bg-white rounded border border-gray-200 shadow-sm overflow-hidden">
-          <div className="bg-gov-blue px-5 py-3 flex items-center gap-2">
+        <div className="widget-wrapper">
+          <div className="widget-header">
             <Icon name="CreditCard" size={18} className="text-gov-gold" />
-            <span className="text-white font-semibold text-sm">Подбор банковских карт и кредитов онлайн</span>
+            <span>Подбор банковских карт и кредитов онлайн</span>
           </div>
-          <div className="w-full overflow-x-auto">
+          <div className="widget-body">
             <iframe
               src="https://ppdu.ru/9f12e860-20ad-445a-bf38-214798d47903"
               style={{ width: '100%', border: 'none', minWidth: '320px', display: 'block', height: '900px' }}

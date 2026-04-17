@@ -52,10 +52,7 @@ export default function ContactsPage() {
               <div className="text-white/70 text-sm">Бесплатно по России · Круглосуточно</div>
             </div>
           </div>
-          <a
-            href="tel:88005553535"
-            className="bg-gov-gold text-gov-dark font-bold px-8 py-3 rounded text-sm hover:bg-yellow-400 transition-colors whitespace-nowrap"
-          >
+          <a href="tel:88005553535" className="btn-primary whitespace-nowrap">
             Позвонить
           </a>
         </div>
@@ -135,7 +132,7 @@ export default function ContactsPage() {
               className="w-full border border-gray-300 rounded px-3 py-2.5 text-sm focus:outline-none focus:border-gov-blue bg-white resize-none"
             />
           </div>
-          <button className="btn-gov px-7 py-2.5 rounded text-sm">
+          <button className="btn-secondary">
             Отправить сообщение
           </button>
           <p className="text-gray-500 text-xs mt-3">

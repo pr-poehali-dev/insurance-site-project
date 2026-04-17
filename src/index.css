@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 0 0% 97%;
+    --background: 210 20% 96%;
     --foreground: 215 35% 12%;
 
     --card: 0 0% 100%;
@@ -28,19 +28,24 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 213 20% 86%;
-    --input: 213 20% 86%;
+    --border: 213 25% 88%;
+    --input: 213 25% 88%;
     --ring: 213 75% 28%;
 
-    --radius: 4px;
+    --radius: 6px;
 
-    --gov-blue: #1a3a6b;
-    --gov-blue-mid: #2456a4;
-    --gov-blue-light: #4a7fd4;
-    --gov-red: #c1272d;
-    --gov-gold: #d4a017;
-    --gov-gray: #f2f4f7;
-    --gov-dark: #1a1f2e;
+    /* === ЕДИНАЯ ЦВЕТОВАЯ СИСТЕМА === */
+    --gov-blue: #1a3a6b; /* основной тёмно-синий */
+    --gov-blue-mid: #2456a4; /* средний синий */
+    --gov-blue-light: #4a7fd4; /* светло-синий */
+    --gov-gold: #c99a2e; /* золотой (насыщеннее) */
+    --gov-gold-light: #f0c040; /* hover золотой */
+    --gov-red: #c1272d; /* акцент красный */
+    --gov-gray: #eef1f6; /* фон секций */
+    --gov-gray-mid: #dce2ec; /* граница */
+    --gov-dark: #111827; /* футер */
+    --gov-text: #1e2d4a; /* основной текст */
+    --gov-text-muted: #5a6a85; /* второстепенный текст */
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -61,85 +66,285 @@
   body {
     @apply bg-background text-foreground;
     font-family: "Golos Text", sans-serif;
+    color: var(--gov-text);
   }
 
   h1,
   h2,
-  h3 {
+  h3,
+  h4 {
     font-family: "Golos Text", sans-serif;
     font-weight: 700;
+    color: var(--gov-blue);
   }
 }
 
-/* Government stripe at top */
+/* =====================
+   НАВИГАЦИЯ / ШАПКА
+   ===================== */
 .gov-stripe {
   background: linear-gradient(
     90deg,
     var(--gov-blue) 0%,
-    var(--gov-blue-mid) 60%,
+    var(--gov-blue-mid) 70%,
     var(--gov-blue-light) 100%
   );
 }
 
-/* Nav active state */
+/* =====================
+   КНОПКИ — ЕДИНЫЙ СТИЛЬ
+   ===================== */
+
+/* Основная кнопка — золотая (CTA) */
+.btn-primary {
+  background: var(--gov-gold);
+  color: #fff;
+  font-family: "Golos Text", sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.03em;
+  padding: 10px 24px;
+  border-radius: var(--radius);
+  border: 2px solid var(--gov-gold);
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background: var(--gov-gold-light);
+  border-color: var(--gov-gold-light);
+  color: var(--gov-blue);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(201, 154, 46, 0.35);
+}
+
+/* Вторичная кнопка — синяя */
+.btn-secondary {
+  background: var(--gov-blue);
+  color: #fff;
+  font-family: "Golos Text", sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.03em;
+  padding: 10px 24px;
+  border-radius: var(--radius);
+  border: 2px solid var(--gov-blue);
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.btn-secondary:hover {
+  background: var(--gov-blue-mid);
+  border-color: var(--gov-blue-mid);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(26, 58, 107, 0.25);
+}
+
+/* Контурная кнопка */
+.btn-outline {
+  background: transparent;
+  color: var(--gov-blue);
+  font-family: "Golos Text", sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.03em;
+  padding: 10px 24px;
+  border-radius: var(--radius);
+  border: 2px solid var(--gov-blue);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.btn-outline:hover {
+  background: var(--gov-blue);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* Контурная на тёмном фоне */
+.btn-outline-white {
+  background: transparent;
+  color: #fff;
+  font-family: "Golos Text", sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.03em;
+  padding: 10px 24px;
+  border-radius: var(--radius);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.btn-outline-white:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #fff;
+}
+
+/* Устаревшие алиасы для совместимости */
+.btn-gov {
+  @apply btn-secondary;
+}
+.btn-gov-outline {
+  @apply btn-outline;
+}
+
+/* =====================
+   КАРТОЧКИ
+   ===================== */
+.gov-card {
+  background: #fff;
+  border: 1px solid var(--gov-gray-mid);
+  border-left: 4px solid var(--gov-blue-mid);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(26, 58, 107, 0.06);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-left-color 0.2s ease;
+}
+.gov-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(26, 58, 107, 0.13);
+  border-left-color: var(--gov-gold);
+}
+
+/* устаревший alias */
+.service-card {
+  background: #fff;
+  border: 1px solid var(--gov-gray-mid);
+  border-left: 4px solid var(--gov-blue-mid);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(26, 58, 107, 0.06);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.service-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(26, 58, 107, 0.13);
+}
+
+/* =====================
+   ВИДЖЕТЫ — ЕДИНЫЙ КОНТЕЙНЕР
+   ===================== */
+.widget-wrapper {
+  background: #fff;
+  border: 1px solid var(--gov-gray-mid);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px rgba(26, 58, 107, 0.1);
+  overflow: hidden;
+}
+
+.widget-header {
+  background: linear-gradient(
+    90deg,
+    var(--gov-blue) 0%,
+    var(--gov-blue-mid) 100%
+  );
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 3px solid var(--gov-gold);
+}
+
+.widget-header span {
+  color: #fff;
+  font-family: "Golos Text", sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+}
+
+.widget-body {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* =====================
+   ЗАГОЛОВКИ СЕКЦИЙ
+   ===================== */
+.section-title {
+  color: var(--gov-blue);
+  font-family: "Golos Text", sans-serif;
+  font-weight: 900;
+}
+.section-title::after {
+  content: "";
+  display: block;
+  width: 52px;
+  height: 3px;
+  background: var(--gov-gold);
+  margin-top: 8px;
+  border-radius: 2px;
+}
+
+/* =====================
+   HERO
+   ===================== */
+.hero-pattern {
+  background-color: var(--gov-blue);
+  background-image:
+    radial-gradient(
+      circle at 15% 60%,
+      rgba(74, 127, 212, 0.18) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 85% 15%,
+      rgba(201, 154, 46, 0.1) 0%,
+      transparent 45%
+    );
+}
+
+/* =====================
+   ТАБЛИЦЫ
+   ===================== */
+.gov-table tr:nth-child(even) {
+  background-color: var(--gov-gray);
+}
+.gov-table th {
+  background: var(--gov-blue);
+  color: #fff;
+}
+
+/* =====================
+   ФУТЕР
+   ===================== */
+.gov-footer {
+  background: var(--gov-dark);
+}
+
+/* =====================
+   НАВИГАЦИЯ
+   ===================== */
 .nav-link-active {
   color: var(--gov-gold);
   border-bottom: 2px solid var(--gov-gold);
 }
 
-/* Card hover */
-.service-card {
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-  border-left: 4px solid var(--gov-blue-mid);
-}
-.service-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(26, 58, 107, 0.12);
-}
-
-/* Gov button */
-.btn-gov {
-  background: var(--gov-blue);
-  color: white;
-  font-family: "Golos Text", sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  transition: background 0.2s ease;
-}
-.btn-gov:hover {
-  background: var(--gov-blue-mid);
-}
-
-.btn-gov-outline {
-  border: 2px solid var(--gov-blue);
-  color: var(--gov-blue);
-  font-family: "Golos Text", sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  transition: all 0.2s ease;
-}
-.btn-gov-outline:hover {
-  background: var(--gov-blue);
-  color: white;
-}
-
-/* Section title underline */
-.section-title::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: var(--gov-gold);
-  margin-top: 10px;
-}
-
-/* Fade-in animation */
+/* =====================
+   АНИМАЦИИ
+   ===================== */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(18px);
   }
   to {
     opacity: 1;
@@ -150,40 +355,6 @@
   animation: fadeInUp 0.5s ease forwards;
 }
 
-/* Hero background pattern */
-.hero-pattern {
-  background-color: var(--gov-blue);
-  background-image:
-    radial-gradient(
-      circle at 20% 50%,
-      rgba(74, 127, 212, 0.15) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 80% 20%,
-      rgba(212, 160, 23, 0.08) 0%,
-      transparent 40%
-    );
-}
-
-/* Gov table striping */
-.gov-table tr:nth-child(even) {
-  background-color: #f2f4f7;
-}
-
-/* Footer */
-.gov-footer {
-  background: var(--gov-dark);
-}
-
-/* Breadcrumb */
-.breadcrumb-item + .breadcrumb-item::before {
-  content: "›";
-  padding: 0 6px;
-  color: #888;
-}
-
-/* Mobile menu */
 @keyframes slideDown {
   from {
     opacity: 0;

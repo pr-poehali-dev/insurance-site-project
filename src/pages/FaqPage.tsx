@@ -84,11 +84,7 @@ export default function FaqPage() {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded text-sm font-semibold transition-colors ${
-                activeCategory === cat
-                  ? 'bg-gov-blue text-white'
-                  : 'bg-white border border-gray-200 text-gray-700 hover:border-gov-blue hover:text-gov-blue'
-              }`}
+              className={activeCategory === cat ? 'btn-secondary' : 'btn-outline'}
             >
               {cat}
             </button>
@@ -129,7 +125,7 @@ export default function FaqPage() {
           <Icon name="MessageCircle" size={32} className="text-gov-gold mx-auto mb-3" />
           <h3 className="font-black text-lg mb-2">Не нашли ответ?</h3>
           <p className="text-white/70 text-sm mb-4">Задайте вопрос нашим специалистам — ответим быстро</p>
-          <a href="tel:88005553535" className="inline-block bg-gov-gold text-gov-dark font-bold px-7 py-2.5 rounded text-sm hover:bg-yellow-400 transition-colors">
+          <a href="tel:88005553535" className="btn-primary inline-flex">
             Позвонить: 8-800-555-35-35
           </a>
         </div>

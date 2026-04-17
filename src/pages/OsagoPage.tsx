@@ -50,17 +50,17 @@ export default function OsagoPage() {
 
           {/* Widget column */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded border border-gray-200 shadow-sm overflow-hidden">
-              <div className="bg-gov-blue px-5 py-3 flex items-center gap-2">
+            <div className="widget-wrapper">
+              <div className="widget-header">
                 <Icon name="Shield" size={18} className="text-gov-gold" />
-                <span className="text-white font-semibold text-sm">Калькулятор и оформление ОСАГО</span>
+                <span>Калькулятор и оформление ОСАГО</span>
               </div>
-              <div className="p-4">
+              <div className="widget-body">
                 <iframe
                   src="https://b2c.pampadu.ru/index.html#549d4d35-44f8-4a37-bbd3-a3f354d3d8fc"
-                  style={{ width: '100%', border: 'none', height: '650px', minWidth: '320px', overflow: 'hidden' }}
+                  style={{ width: '100%', border: 'none', height: '700px', minWidth: '320px', display: 'block' }}
                   id="ppdwi"
-                  scrolling="no"
+                  scrolling="yes"
                 />
               </div>
             </div>
@@ -104,7 +104,7 @@ export default function OsagoPage() {
               <Icon name="Headphones" size={22} className="text-gov-gold mb-2" />
               <div className="font-semibold mb-1">Нужна помощь?</div>
               <div className="text-white/70 text-xs mb-3">Бесплатная консультация</div>
-              <a href="tel:88005553535" className="block text-center bg-gov-gold text-gov-dark font-bold py-2 rounded text-sm hover:bg-yellow-400 transition-colors">
+              <a href="tel:88005553535" className="btn-primary block text-center justify-center">
                 8-800-555-35-35
               </a>
             </div>

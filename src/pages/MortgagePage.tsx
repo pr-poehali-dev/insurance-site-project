@@ -73,12 +73,12 @@ export default function MortgagePage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Widget */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded border border-gray-200 shadow-sm overflow-hidden">
-              <div className="bg-gov-blue px-5 py-3 flex items-center gap-2">
-                <Icon name="Shield" size={18} className="text-gov-gold" />
-                <span className="text-white font-semibold text-sm">Калькулятор и оформление ипотечного страхования</span>
+            <div className="widget-wrapper">
+              <div className="widget-header">
+                <Icon name="Home" size={18} className="text-gov-gold" />
+                <span>Калькулятор и оформление ипотечного страхования</span>
               </div>
-              <div className="w-full overflow-x-auto">
+              <div className="widget-body">
                 <iframe
                   src="https://ppdu.ru/9f12e860-20ad-445a-bf38-214798d47903"
                   style={{ width: '100%', border: 'none', minWidth: '320px', display: 'block', height: '800px' }}
@@ -126,7 +126,7 @@ export default function MortgagePage() {
               <Icon name="Headphones" size={22} className="text-gov-gold mb-2" />
               <div className="font-semibold mb-1">Консультация бесплатно</div>
               <div className="text-white/70 text-xs mb-3">Подберём оптимальный полис под ваш банк</div>
-              <a href="tel:88005553535" className="block text-center bg-gov-gold text-gov-dark font-bold py-2 rounded text-sm hover:bg-yellow-400 transition-colors">
+              <a href="tel:88005553535" className="btn-primary block text-center justify-center">
                 8-800-555-35-35
               </a>
             </div>

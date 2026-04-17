@@ -59,17 +59,11 @@ export default function HomePage({ onNavigate }: HomePageProps) {
                 Официальные полисы с регистрацией в ЦБ РФ и РСА.
               </p>
               <div className="flex flex-wrap gap-3">
-                <button
-                  onClick={() => onNavigate('osago')}
-                  className="bg-gov-gold text-gov-dark font-bold px-6 py-3 rounded text-sm hover:bg-yellow-400 transition-colors flex items-center gap-2"
-                >
+                <button onClick={() => onNavigate('osago')} className="btn-primary">
                   <Icon name="Car" size={18} />
                   Оформить ОСАГО
                 </button>
-                <button
-                  onClick={() => onNavigate('mortgage')}
-                  className="bg-white/15 border border-white/30 text-white font-semibold px-6 py-3 rounded text-sm hover:bg-white/25 transition-colors flex items-center gap-2"
-                >
+                <button onClick={() => onNavigate('mortgage')} className="btn-outline-white">
                   <Icon name="Home" size={18} />
                   Страхование ипотеки
                 </button>
@@ -152,17 +146,14 @@ export default function HomePage({ onNavigate }: HomePageProps) {
           <h2 className="text-2xl font-black mb-3">Оформите полис прямо сейчас</h2>
           <p className="text-white/75 mb-6 text-sm">Электронный полис придёт на e-mail сразу после оплаты</p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <button
-              onClick={() => onNavigate('osago')}
-              className="bg-gov-gold text-gov-dark font-bold px-7 py-3 rounded text-sm hover:bg-yellow-400 transition-colors"
-            >
-              ОСАГО
+            <button onClick={() => onNavigate('osago')} className="btn-primary">
+              <Icon name="Car" size={16} /> ОСАГО
             </button>
-            <button
-              onClick={() => onNavigate('mortgage')}
-              className="border-2 border-white text-white font-bold px-7 py-3 rounded text-sm hover:bg-white hover:text-gov-blue transition-colors"
-            >
-              Ипотека
+            <button onClick={() => onNavigate('mortgage')} className="btn-outline-white">
+              <Icon name="Home" size={16} /> Ипотека
+            </button>
+            <button onClick={() => onNavigate('money')} className="btn-outline-white">
+              <Icon name="CreditCard" size={16} /> Деньги онлайн
             </button>
           </div>
         </div>
