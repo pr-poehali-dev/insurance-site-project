@@ -4,88 +4,51 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 97%;
+    --foreground: 215 35% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 35% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 35% 12%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 213 75% 28%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 20% 94%;
+    --secondary-foreground: 215 35% 12%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 38 90% 50%;
+    --accent-foreground: 215 35% 12%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 213 20% 86%;
+    --input: 213 20% 86%;
+    --ring: 213 75% 28%;
 
-    --radius: 0.5rem;
+    --radius: 4px;
+
+    --gov-blue: #1a3a6b;
+    --gov-blue-mid: #2456a4;
+    --gov-blue-light: #4a7fd4;
+    --gov-red: #c1272d;
+    --gov-gold: #d4a017;
+    --gov-gray: #f2f4f7;
+    --gov-dark: #1a1f2e;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
@@ -97,5 +60,140 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: "Golos Text", sans-serif;
   }
+
+  h1,
+  h2,
+  h3 {
+    font-family: "Golos Text", sans-serif;
+    font-weight: 700;
+  }
+}
+
+/* Government stripe at top */
+.gov-stripe {
+  background: linear-gradient(
+    90deg,
+    var(--gov-blue) 0%,
+    var(--gov-blue-mid) 60%,
+    var(--gov-blue-light) 100%
+  );
+}
+
+/* Nav active state */
+.nav-link-active {
+  color: var(--gov-gold);
+  border-bottom: 2px solid var(--gov-gold);
+}
+
+/* Card hover */
+.service-card {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  border-left: 4px solid var(--gov-blue-mid);
+}
+.service-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(26, 58, 107, 0.12);
+}
+
+/* Gov button */
+.btn-gov {
+  background: var(--gov-blue);
+  color: white;
+  font-family: "Golos Text", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: background 0.2s ease;
+}
+.btn-gov:hover {
+  background: var(--gov-blue-mid);
+}
+
+.btn-gov-outline {
+  border: 2px solid var(--gov-blue);
+  color: var(--gov-blue);
+  font-family: "Golos Text", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+}
+.btn-gov-outline:hover {
+  background: var(--gov-blue);
+  color: white;
+}
+
+/* Section title underline */
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--gov-gold);
+  margin-top: 10px;
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fadeInUp {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+/* Hero background pattern */
+.hero-pattern {
+  background-color: var(--gov-blue);
+  background-image:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(74, 127, 212, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(212, 160, 23, 0.08) 0%,
+      transparent 40%
+    );
+}
+
+/* Gov table striping */
+.gov-table tr:nth-child(even) {
+  background-color: #f2f4f7;
+}
+
+/* Footer */
+.gov-footer {
+  background: var(--gov-dark);
+}
+
+/* Breadcrumb */
+.breadcrumb-item + .breadcrumb-item::before {
+  content: "›";
+  padding: 0 6px;
+  color: #888;
+}
+
+/* Mobile menu */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.mobile-menu-open {
+  animation: slideDown 0.2s ease forwards;
 }
