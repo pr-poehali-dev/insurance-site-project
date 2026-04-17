@@ -78,12 +78,12 @@ export default function MortgagePage() {
                 <Icon name="Shield" size={18} className="text-gov-gold" />
                 <span className="text-white font-semibold text-sm">Калькулятор и оформление ипотечного страхования</span>
               </div>
-              <div className="p-4">
+              <div className="w-full overflow-x-auto">
                 <iframe
                   src="https://ppdu.ru/9f12e860-20ad-445a-bf38-214798d47903"
-                  style={{ width: '100%', border: 'none', minWidth: '320px', overflow: 'hidden' }}
+                  style={{ width: '100%', border: 'none', minWidth: '320px', display: 'block', height: '800px' }}
                   id="ppdwiOffer"
-                  scrolling="no"
+                  scrolling="yes"
                 />
               </div>
             </div>
