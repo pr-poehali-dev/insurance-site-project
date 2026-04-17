@@ -5,6 +5,7 @@ const navItems = [
   { id: 'home', label: 'Главная' },
   { id: 'osago', label: 'ОСАГО' },
   { id: 'mortgage', label: 'Ипотека' },
+  { id: 'money', label: 'Деньги онлайн' },
   { id: 'about', label: 'О компании' },
   { id: 'faq', label: 'FAQ' },
   { id: 'documents', label: 'Документы' },

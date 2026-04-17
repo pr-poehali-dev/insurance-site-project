@@ -8,8 +8,9 @@ import AboutPage from '@/pages/AboutPage';
 import FaqPage from '@/pages/FaqPage';
 import DocumentsPage from '@/pages/DocumentsPage';
 import ContactsPage from '@/pages/ContactsPage';
+import MoneyPage from '@/pages/MoneyPage';
 
-type Page = 'home' | 'osago' | 'mortgage' | 'about' | 'faq' | 'documents' | 'contacts';
+type Page = 'home' | 'osago' | 'mortgage' | 'money' | 'about' | 'faq' | 'documents' | 'contacts';
 
 export default function Index() {
   const [activePage, setActivePage] = useState<Page>('home');
@@ -24,6 +25,7 @@ export default function Index() {
       case 'home': return <HomePage onNavigate={handleNavigate} />;
       case 'osago': return <OsagoPage />;
       case 'mortgage': return <MortgagePage />;
+      case 'money': return <MoneyPage />;
       case 'about': return <AboutPage />;
       case 'faq': return <FaqPage />;
       case 'documents': return <DocumentsPage />;
