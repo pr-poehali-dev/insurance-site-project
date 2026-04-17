@@ -77,7 +77,7 @@ export default function HomePage({ onNavigate }: HomePageProps) {
             </div>
             <div className="hidden lg:block">
               <img
-                src="https://cdn.poehali.dev/projects/f3409363-2927-4b58-a630-76d43e50d7ef/files/da4a01f7-6be9-4fde-b0c0-6ff2844a84ff.jpg"
+                src="https://cdn.poehali.dev/projects/f3409363-2927-4b58-a630-76d43e50d7ef/files/d7cd976e-3047-4032-bad8-c53221c110d6.jpg"
                 alt="Страховая компания"
                 className="rounded-lg shadow-2xl w-full object-cover h-72 opacity-90"
               />
